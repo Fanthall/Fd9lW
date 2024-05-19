@@ -1,3 +1,4 @@
+import { ReduxProvider } from "@/redux/Provider";
 import { NextUIProvider } from "@nextui-org/react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -18,11 +19,13 @@ export default function RootLayout({
 	return (
 		<html lang="en" className="w-full h-full">
 			<body
-				className={`${inter.className} dark text-foreground bg-background  w-full h-full`}
+				className={`${inter.className} dark text-foreground bg-background  w-full h-full  p-0`}
 			>
-				<NextUIProvider className="w-full h-full">
-					{children}
-				</NextUIProvider>
+				<ReduxProvider>
+					<NextUIProvider className="w-full h-full p-0">
+						{children}
+					</NextUIProvider>
+				</ReduxProvider>
 			</body>
 		</html>
 	);
