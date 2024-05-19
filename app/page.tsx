@@ -1,12 +1,9 @@
-import Link from "next/link";
-import ProductCard from "./components/ProductCard";
+import AuthPage from "./components/auth/AuthPage";
 
 export default function Home() {
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-between p-24">
-			<h1>Hello World</h1>
-			<Link href="/login">login</Link>
-			<ProductCard />
+		<main className="w-full h-full flex flex-row items-start justify-start">
+			<AuthPage />
 		</main>
 	);
 }
