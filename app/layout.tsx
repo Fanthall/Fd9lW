@@ -1,7 +1,8 @@
-import { ReduxProvider } from "@/redux/Provider";
-import { NextUIProvider } from "@nextui-org/react";
+"ues client";
 import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
+import { Providers } from "./components/Provider";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,14 +19,14 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className="w-full h-full">
-			<body
-				className={`${inter.className} dark text-foreground bg-background  w-full h-full  p-0`}
-			>
-				<ReduxProvider>
-					<NextUIProvider className="w-full h-full p-0">
-						{children}
-					</NextUIProvider>
-				</ReduxProvider>
+			<body className={`${inter.className}  p-0 w-full h-full`}>
+				<ThemeProvider attribute="class" enableSystem>
+					<Providers>
+						<main className="w-full h-full flex flex-row items-start justify-start overflow-x-hidden overflow-y-auto">
+							{children}
+						</main>
+					</Providers>
+				</ThemeProvider>
 			</body>
 		</html>
 	);
