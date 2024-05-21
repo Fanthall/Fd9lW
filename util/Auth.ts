@@ -1,8 +1,8 @@
 export interface AuthState {
 	name: string;
+	email: string;
 	token: string;
 	type: string;
-	id: number;
 }
 
 export interface AuthForm {
@@ -10,4 +10,15 @@ export interface AuthForm {
 	email: string;
 	password: string;
 	rememberMe?: boolean;
+}
+
+export interface LoginAuthResponse {
+	action_login: {
+		token: string;
+	};
+}
+export interface RegisterAuthResponse {
+	action_register: {
+		token: string;
+	};
 }

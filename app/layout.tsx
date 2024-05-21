@@ -2,6 +2,8 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
+import { ToastContainer } from "react-toastify";
+import Landing from "./components/Landing";
 import { Providers } from "./components/Provider";
 import "./globals.css";
 
@@ -23,7 +25,8 @@ export default function RootLayout({
 				<ThemeProvider attribute="class" enableSystem>
 					<Providers>
 						<main className="w-full h-full flex flex-row items-start justify-start overflow-x-hidden overflow-y-auto">
-							{children}
+							<ToastContainer autoClose={5000} position="top-right" />
+							<Landing>{children}</Landing>
 						</main>
 					</Providers>
 				</ThemeProvider>

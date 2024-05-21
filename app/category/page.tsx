@@ -4,7 +4,7 @@ import ImageSlider from "../components/image-slider/ImageSlider";
 
 const Category = () => {
 	return (
-		<div className="w-full h-full flex flex-col justify-start items-center p-16">
+		<div className="w-full h-full flex flex-col justify-start items-center p-16 pt-2">
 			<Header />
 			<div className="w-full h-[600px] flex flex-row justify-center items-center ">
 				<ImageSlider imageHeightPx={400} />
