@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	basePath: "/product-catalog",
+	basePath: "/2048-in-react",
 	output: "export",
 	reactStrictMode: true,
 };
